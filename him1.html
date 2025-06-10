@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lucky King - Color Prediction</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <h1>🎲 Lucky King 🎲</h1>
+        <h2>Matka-style Color Prediction Game</h2>
+        <button onclick="startGame()">Start Game</button>
+        <div id="game" style="display:none;">
+            <p>Pick a color:</p>
+            <button onclick="predict('Red')">Red</button>
+            <button onclick="predict('Green')">Green</button>
+            <button onclick="predict('Blue')">Blue</button>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
