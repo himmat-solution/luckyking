@@ -1,11 +1,10 @@
 
 function startGame() {
-    document.getElementById('gameArea').style.display = 'block';
+  document.getElementById('game').style.display = 'block';
 }
-
-function predict(color) {
-    const colors = ['Red', 'Green', 'Blue'];
-    const result = colors[Math.floor(Math.random() * colors.length)];
-    document.getElementById('result').innerText = 
-        (result === color) ? "🎉 You Won! Color was " + result : "❌ Try Again! Color was " + result;
+function guessColor(color) {
+  const colors = ['Red', 'Green', 'Blue'];
+  const randomColor = colors[Math.floor(Math.random() * colors.length)];
+  const result = color === randomColor ? "✅ Correct!" : "❌ Wrong! It was " + randomColor;
+  document.getElementById('result').innerText = result;
 }
