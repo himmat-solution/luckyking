@@ -1,1 +1,0 @@
-console.log('Lucky King script loaded');
