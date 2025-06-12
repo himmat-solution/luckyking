@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
   <title>My Wallet - Lucky King</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h2>My Wallet</h2>
-  <p><strong>Balance:</strong> ₹0.00</p>
-  <p><strong>Referral Code:</strong> USER1234</p>
-  <p><strong>My Referral Link:</strong> https://luckyking.in/signup.html?ref=USER1234</p>
+  <header>
+    <img src="logo.png" alt="Lucky King Logo" class="logo" />
+    <h1>My Wallet</h1>
+  </header>
 
-  <h3>Referral Commission</h3>
-  <ul>
-    <li>Level 1 Commission: ₹0</li>
-    <li>Level 2 Commission: ₹0</li>
-    <li>Level 3 to 6 Commission: ₹0</li>
-  </ul>
+  <section class="wallet-box">
+    <p>Wallet Balance: <span id="wallet-balance">₹0.00</span></p>
+    <button onclick="alert('Deposit coming soon')">Deposit</button>
+    <button onclick="alert('Withdraw coming soon')">Withdraw</button>
+  </section>
 
-  <p><a href="index.html">← Back to Home</a></p>
+  <footer>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="#">Wallet</a> |
+      <a href="#">Profile</a> |
+      <a href="#">Logout</a>
+    </nav>
+  </footer>
 </body>
 </html>
