@@ -1,1 +1,43 @@
 /* Main CSS file */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.form-container {
+  background: white;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  width: 300px;
+  border-radius: 8px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #00c851;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #007e33;
+}
+
+a {
+  color: #007bff;
+  text-decoration: none;
+}
