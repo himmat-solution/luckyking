@@ -1,17 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Lucky King</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <h1>Welcome to Lucky King</h1>
-  <p><a href="login.html">Login</a> | <a href="signup.html">Signup</a></p>
-  <ul>
-    <li><a href="color.html">Color Prediction</a></li>
-    <li><a href="chicken.html">Chicken Run</a></li>
-    <li><a href="andar.html">Andar Bahar</a></li>
-    <li><a href="wheel.html">Wheel Spin</a></li>
-    <li><a href="dice.html">Dice Game</a></li>
-  </ul>
+  <header>
+    <img src="logo.png" alt="Lucky King Logo" class="logo">
+    <h1>Welcome to Lucky King</h1>
+  </header>
+
+  <section class="wallet-box">
+    <p>Wallet Balance: ₹ <span id="wallet-balance">0.00</span></p>
+    <button onclick="alert('Coming soon')">Deposit</button>
+    <button onclick="alert('Coming soon')">Withdraw</button>
+  </section>
+
+  <section class="games">
+    <h2>Games</h2>
+    <div class="game-grid">
+      <a href="#" class="game-button">🎨 Color Prediction</a>
+      <a href="#" class="game-button">🐔 Chicken Run</a>
+      <a href="#" class="game-button">🃏 Andar Bahar</a>
+      <a href="#" class="game-button">🎡 Wheel Spin</a>
+      <a href="#" class="game-button">🎲 Dice Game</a>
+      <a href="#" class="game-button">🚗 Car Race</a>
+      <a href="#" class="game-button">🪙 Coin Flip</a>
+    </div>
+  </section>
+
+  <footer>
+    <nav>
+      <a href="#">Home</a> |
+      <a href="#">Wallet</a> |
+      <a href="#">Profile</a> |
+      <a href="#">Logout</a>
+    </nav>
+  </footer>
 </body>
 </html>
