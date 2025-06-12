@@ -1,43 +1,70 @@
-/* Main CSS file */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f8f8f8;
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  background: #f4f4f4;
+  text-align: center;
+  color: #333;
 }
 
-.form-container {
-  background: white;
-  padding: 25px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
-  width: 300px;
-  border-radius: 8px;
+header {
+  background: #4b0082;
+  padding: 20px;
+  color: white;
 }
 
-input, button {
-  width: 100%;
+.logo {
+  width: 80px;
+  height: auto;
+}
+
+.wallet-box {
+  margin: 20px auto;
   padding: 10px;
-  margin: 8px 0;
-  border: 1px solid #ccc;
+  background: #fff;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.wallet-box button {
+  margin: 10px 5px;
+  padding: 10px 20px;
+  background: #28a745;
+  color: white;
+  border: none;
   border-radius: 5px;
 }
 
-button {
-  background-color: #00c851;
+.games {
+  margin: 20px;
+}
+
+.game-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.game-button {
+  display: inline-block;
+  padding: 15px 20px;
+  background: #ff6347;
   color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #007e33;
-}
-
-a {
-  color: #007bff;
   text-decoration: none;
+  border-radius: 8px;
+  width: 150px;
+  transition: 0.2s;
+}
+
+.game-button:hover {
+  background: #e5533d;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 10px;
 }
