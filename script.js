@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>Signup - Lucky King</title>
-</head>
-<body>
-  <h2>Signup</h2>
-  <form>
-    <input type="text" placeholder="Phone or Email" required /><br /><br />
-    <input type="password" placeholder="Password" required /><br /><br />
-    <input type="text" placeholder="Referral Code (optional)" /><br /><br />
-    <button type="submit">Signup</button>
-  </form>
-</body>
-</html>
-// JavaScript logic
+// JavaScript Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const loginForm = document.getElementById("loginForm");
+  const signupForm = document.getElementById("signupForm");
+
+  if (loginForm) {
+    loginForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Login submitted!");
+    });
+  }
+
+  if (signupForm) {
+    signupForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Signup submitted!");
+    });
+  }
+});
