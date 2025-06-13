@@ -1,70 +1,42 @@
 body {
   font-family: Arial, sans-serif;
+  background: #111;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
-  background: #f4f4f4;
-  text-align: center;
-  color: #333;
 }
 
-header {
-  background: #4b0082;
+.login-container, .home-container {
+  background: #222;
   padding: 20px;
-  color: white;
-}
-
-.logo {
-  width: 80px;
-  height: auto;
-}
-
-.wallet-box {
-  margin: 20px auto;
-  padding: 10px;
-  background: #fff;
-  border-radius: 8px;
+  border-radius: 10px;
+  text-align: center;
   width: 90%;
   max-width: 400px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.wallet-box button {
-  margin: 10px 5px;
-  padding: 10px 20px;
-  background: #28a745;
+input {
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+button {
+  background: #00cc66;
   color: white;
   border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
   border-radius: 5px;
 }
 
-.games {
-  margin: 20px;
-}
-
-.game-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
-}
-
-.game-button {
-  display: inline-block;
-  padding: 15px 20px;
-  background: #ff6347;
-  color: white;
-  text-decoration: none;
-  border-radius: 8px;
-  width: 150px;
-  transition: 0.2s;
-}
-
-.game-button:hover {
-  background: #e5533d;
-}
-
-footer {
-  background: #333;
-  color: white;
-  padding: 10px;
+button:hover {
+  background: #00994d;
 }
