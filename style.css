@@ -1,86 +1,49 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #111;
-  color: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
-.login-container,
-.home-container {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 96%;
-  max-width: 400px;
-  box-shadow: 0 0 20px #000;
-}
-
-input {
-  width: 100%;
-  margin: 10px 0;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-}
-
-button {
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border: none;
-  border-radius: 5px;
-  background: #0099dd;
+  background-color: #121212;
   color: white;
-  transition: 0.3s;
-}
-
-button:hover {
-  background: #0077bb;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 20px;
 }
 
 .logo {
-  max-width: 150px;
-  margin-bottom: 10px;
+  width: 120px;
+  height: auto;
+  margin-top: 10px;
 }
 
 .auth-links {
-  margin: 10px 0;
+  margin: 15px 0;
+}
+
+.auth-links a {
+  color: #00aaff;
+  text-decoration: none;
+  margin: 0 10px;
 }
 
 .games {
-  padding: 20px;
-  text-align: center;
+  margin-top: 30px;
 }
 
 .game-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-  margin-top: 15px;
+  gap: 10px;
+  justify-content: center;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
-.game-grid a {
-  text-decoration: none;
+.game-button {
+  background-color: #333;
+  padding: 12px;
+  border-radius: 6px;
   color: white;
-  background: #333;
-  padding: 12px 10px;
-  border-radius: 8px;
-  display: block;
-  transition: 0.3s;
-  font-weight: bold;
+  text-decoration: none;
+  transition: background 0.2s ease;
 }
 
-.game-grid a:hover {
-  background: #444;
-  transform: scale(1.05);
-}
-
-.game-grid a span {
-  margin-right: 8px;
+.game-button:hover {
+  background-color: #444;
 }
