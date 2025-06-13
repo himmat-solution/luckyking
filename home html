@@ -1,24 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>Lucky King - Home</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body onload="checkLogin()">
-  <div class="home-container">
-    <h2>Welcome to Lucky King!</h2>
-    <p>Games and dashboard will be shown here.</p>
-    <button onclick="logout()">Logout</button>
-  </div>
-
-  <script src="auth.js"></script>
+  <link rel="stylesheet" href="style.css">
   <script>
-    function logout() {
-      localStorage.removeItem("luckyking_user");
-      window.location.href = "login.html";
+    window.onload = function () {
+      if (!localStorage.getItem('userPhone')) {
+        window.location.href = "index.html";
+      }
+    }
+
+    function goTo(page) {
+      alert("Opening: " + page + " (Coming soon)");
     }
   </script>
+</head>
+<body>
+  <div class="header">
+    <h2>Lucky King</h2>
+  </div>
+
+  <div class="games">
+    <button onclick="goTo('Color Prediction')">🎨 Color Prediction</button>
+    <button onclick="goTo('Chicken Run')">🐔 Chicken Run</button>
+    <button onclick="goTo('Dragon Tiger')">🐉🐯 Dragon Tiger</button>
+    <button onclick="goTo('Wheel Spin')">🎡 Wheel Spin</button>
+    <button onclick="goTo('Dice Game')">🎲 Dice Game</button>
+    <button onclick="goTo('Andar Bahar')">🃏 Andar Bahar</button>
+    <button onclick="goTo('Car Race')">🏎️ Car Race</button>
+    <button onclick="goTo('Coin Flip')">🪙 Coin Flip</button>
+  </div>
+
+  <div class="bottom-nav">
+    <button onclick="goTo('Home')">🏠 Home</button>
+    <button onclick="goTo('Promotion')">🎁 Promotion</button>
+    <button onclick="goTo('Agent')">👥 Agent</button>
+    <button onclick="goTo('Wallet')">💰 Wallet</button>
+    <button onclick="goTo('Me')">👤 Me</button>
+  </div>
 </body>
 </html>
