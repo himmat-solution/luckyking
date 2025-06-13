@@ -1,18 +1,23 @@
+<!-- signup.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sign Up - Lucky King</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="auth-container">
-    <h2>Sign Up</h2>
-    <form>
-      <input type="text" placeholder="Phone or Email" required />
-      <input type="password" placeholder="Password" required />
-      <input type="password" placeholder="Confirm Password" required />
-      <button type="submit">Create Account</button>
-    </form>
+  <div class="container">
+    <div class="box">
+      <h2>Sign Up</h2>
+      <input type="text" id="signupPhoneEmail" placeholder="Phone or Email" />
+      <input type="password" id="signupPassword" placeholder="Password" />
+      <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" />
+      <button class="btn" onclick="signup()">Create Account</button>
+    </div>
   </div>
+
+  <script src="auth.js"></script>
 </body>
 </html>
