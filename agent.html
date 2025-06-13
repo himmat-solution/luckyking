@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Agent Dashboard - Lucky King</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="header">
+    <h2>👥 Agent Dashboard</h2>
+  </div>
+
+  <div class="content">
+    <div class="stats">
+      <p><strong>Today Registered:</strong> 12</p>
+      <p><strong>Today Depositors:</strong> 7</p>
+      <p><strong>Total Team Deposit:</strong> ₹53,000</p>
+    </div>
+
+    <h3>Team Structure (Level 1 to 6)</h3>
+    
+    <div class="team-list">
+      <div class="level">
+        <h4>Level 1 (Direct)</h4>
+        <ul>
+          <li>UID: 100201 | 📞 98*****12 | Deposit: ₹6,000</li>
+          <li>UID: 100209 | 📞 92*****45 | Deposit: ₹3,000</li>
+        </ul>
+      </div>
+
+      <div class="level">
+        <h4>Level 2</h4>
+        <ul>
+          <li>UID: 100301 | 📞 97*****99 | Deposit: ₹2,500</li>
+        </ul>
+      </div>
+
+      <!-- Repeat for Level 3 to Level 6 -->
+    </div>
+
+    <div class="referral-link">
+      <p>Your Invite Link:</p>
+      <input type="text" id="inviteLink" value="" readonly>
+      <button onclick="copyInvite()">Copy</button>
+    </div>
+  </div>
+
+  <div class="bottom-nav">
+    <a href="home.html">🏠</a>
+    <a href="promotion.html">🎁</a>
+    <a href="agent.html">👥</a>
+    <a href="wallet.html">💰</a>
+    <a href="me.html">👤</a>
+  </div>
+
+  <script>
+    const uid = localStorage.getItem('uid') || '100001';
+    document.getElementById("inviteLink").value = "https://www.luckyking.in/signup?ref=" + uid;
+
+    function copyInvite() {
+      const input = document.getElementById("inviteLink");
+      input.select();
+      document.execCommand("copy");
+      alert("Invite link copied!");
+    }
+  </script>
+</body>
+</html>
