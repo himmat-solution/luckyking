@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Lucky King - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body onload="checkLogin()">
+  <div class="home-container">
+    <h2>Welcome to Lucky King!</h2>
+    <p>Games and dashboard will be shown here.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    function logout() {
+      localStorage.removeItem("luckyking_user");
+      window.location.href = "login.html";
+    }
+  </script>
+</body>
+</html>
