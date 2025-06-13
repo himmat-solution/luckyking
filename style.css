@@ -40,3 +40,37 @@ button {
 button:hover {
   background: #00994d;
 }
+.logo {
+  max-width: 150px;
+  margin-bottom: 10px;
+}
+
+.auth-links {
+  margin: 10px 0;
+}
+
+.games {
+  padding: 20px;
+  text-align: center;
+}
+
+.game-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.game-button {
+  background-color: #333;
+  padding: 12px;
+  border-radius: 8px;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: background 0.3s;
+}
+
+.game-button:hover {
+  background-color: #555;
+}
