@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lucky King - Login</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function login() {
+      const phone = document.getElementById('phone').value;
+      const password = document.getElementById('password').value;
+
+      if (phone === '' || password === '') {
+        alert('Enter all details');
+        return;
+      }
+
+      // Simulate login success
+      localStorage.setItem('userPhone', phone);
+      window.location.href = "home.html";
+    }
+
+    // Auto redirect if already logged in
+    window.onload = function () {
+      if (localStorage.getItem('userPhone')) {
+        window.location.href = "home.html";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Login to Lucky King</h2>
+    <input type="text" id="phone" placeholder="Enter Phone Number">
+    <input type="password" id="password" placeholder="Enter Password">
+    <button onclick="login()">Login</button>
+  </div>
+</body>
+</html>
