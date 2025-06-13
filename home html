@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Lucky King - Home</title>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -10,23 +10,22 @@
   <div class="home-container">
     <img src="logo.png" alt="Lucky King Logo" class="logo" />
     <h2>Welcome to Lucky King</h2>
-
     <div class="auth-links">
-      <a href="login.html">Login</a> | 
-      <a href="signup.html">Sign Up</a>
+      <a href="login.html" style="color: #00f;">Login</a> |
+      <a href="signup.html" style="color: #80c0ff;">Sign Up</a>
     </div>
 
     <div class="games">
-      <h2>Games</h2>
+      <h3>Games</h3>
       <div class="game-grid">
-        <a href="color.html" class="game-button">🎨 Color Prediction</a>
-        <a href="chicken.html" class="game-button">🐔 Chicken Run</a>
-        <a href="andar.html" class="game-button">🃏 Andar Bahar</a>
-        <a href="wheel.html" class="game-button">🎡 Wheel Spin</a>
-        <a href="dice.html" class="game-button">🎲 Dice Game</a>
-        <a href="car.html" class="game-button">🏎️ Car Race</a>
-        <a href="coin.html" class="game-button">🪙 Coin Flip</a>
-        <a href="dragon.html" class="game-button">🐉 Dragon Tiger</a>
+        <a href="#"><span>🟧</span>Color Prediction</a>
+        <a href="#"><span>🐔</span>Chicken Run</a>
+        <a href="#"><span>🃏</span>Andar Bahar</a>
+        <a href="#"><span>🎡</span>Wheel Spin</a>
+        <a href="#"><span>🎲</span>Dice Game</a>
+        <a href="#"><span>🏎️</span>Car Race</a>
+        <a href="#"><span>🪙</span>Coin Flip</a>
+        <a href="#"><span>🐉</span>Dragon Tiger</a>
       </div>
     </div>
   </div>
