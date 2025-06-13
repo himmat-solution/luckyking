@@ -1,43 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucky King - Home</title>
-  <link rel="stylesheet" href="style.css">
-  <script>
-    window.onload = function () {
-      if (!localStorage.getItem('userPhone')) {
-        window.location.href = "index.html";
-      }
-    }
-
-    function goTo(page) {
-      alert("Opening: " + page + " (Coming soon)");
-    }
-  </script>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="header">
-    <h2>Lucky King</h2>
-  </div>
+  <div class="home-container">
+    <img src="logo.png" alt="Lucky King Logo" class="logo" />
+    <h2>Welcome to Lucky King</h2>
 
-  <div class="games">
-    <button onclick="goTo('Color Prediction')">🎨 Color Prediction</button>
-    <button onclick="goTo('Chicken Run')">🐔 Chicken Run</button>
-    <button onclick="goTo('Dragon Tiger')">🐉🐯 Dragon Tiger</button>
-    <button onclick="goTo('Wheel Spin')">🎡 Wheel Spin</button>
-    <button onclick="goTo('Dice Game')">🎲 Dice Game</button>
-    <button onclick="goTo('Andar Bahar')">🃏 Andar Bahar</button>
-    <button onclick="goTo('Car Race')">🏎️ Car Race</button>
-    <button onclick="goTo('Coin Flip')">🪙 Coin Flip</button>
-  </div>
+    <div class="auth-links">
+      <a href="login.html">Login</a> | 
+      <a href="signup.html">Sign Up</a>
+    </div>
 
-  <div class="bottom-nav">
-    <button onclick="goTo('Home')">🏠 Home</button>
-    <button onclick="goTo('Promotion')">🎁 Promotion</button>
-    <button onclick="goTo('Agent')">👥 Agent</button>
-    <button onclick="goTo('Wallet')">💰 Wallet</button>
-    <button onclick="goTo('Me')">👤 Me</button>
+    <div class="games">
+      <h2>Games</h2>
+      <div class="game-grid">
+        <a href="color.html" class="game-button">🎨 Color Prediction</a>
+        <a href="chicken.html" class="game-button">🐔 Chicken Run</a>
+        <a href="andar.html" class="game-button">🃏 Andar Bahar</a>
+        <a href="wheel.html" class="game-button">🎡 Wheel Spin</a>
+        <a href="dice.html" class="game-button">🎲 Dice Game</a>
+        <a href="car.html" class="game-button">🏎️ Car Race</a>
+        <a href="coin.html" class="game-button">🪙 Coin Flip</a>
+        <a href="dragon.html" class="game-button">🐉 Dragon Tiger</a>
+      </div>
+    </div>
   </div>
 </body>
 </html>
