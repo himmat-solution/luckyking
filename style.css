@@ -1,49 +1,50 @@
 body {
-  background-color: #121212;
-  color: white;
-  font-family: Arial, sans-serif;
-  text-align: center;
-  padding: 20px;
-}
-
-.logo {
-  width: 120px;
-  height: auto;
-  margin-top: 10px;
-}
-
-.auth-links {
-  margin: 15px 0;
-}
-
-.auth-links a {
-  color: #00aaff;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-.games {
-  margin-top: 30px;
-}
-
-.game-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  background-color: #f1f1f1;
+  display: flex;
   justify-content: center;
-  max-width: 400px;
-  margin: 0 auto;
+  align-items: center;
+  height: 100vh;
 }
 
-.game-button {
-  background-color: #333;
-  padding: 12px;
-  border-radius: 6px;
+.container, .auth-container, .dashboard {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.1);
+  text-align: center;
+  width: 300px;
+}
+
+input, button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
+
+.btn {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+  background-color: #007bff;
   color: white;
   text-decoration: none;
-  transition: background 0.2s ease;
+  border-radius: 5px;
 }
 
-.game-button:hover {
-  background-color: #444;
+.menu a {
+  display: inline-block;
+  margin: 0 10px;
+  color: #007bff;
+  text-decoration: none;
 }
