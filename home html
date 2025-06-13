@@ -3,31 +3,76 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lucky King - Home</title>
+  <title>Home - Lucky King</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .home-container {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .game-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+    }
+
+    .game-box {
+      background: #f0f4ff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.1);
+      font-weight: bold;
+      font-size: 18px;
+      cursor: pointer;
+    }
+
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: #fff;
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #ccc;
+      padding: 10px 0;
+    }
+
+    .bottom-nav a {
+      text-align: center;
+      font-size: 14px;
+      color: #0066ff;
+      text-decoration: none;
+    }
+
+    .bottom-nav a:hover {
+      color: #004acc;
+    }
+  </style>
 </head>
 <body>
   <div class="home-container">
-    <img src="logo.png" alt="Lucky King Logo" class="logo" />
-    <h2>Welcome to Lucky King</h2>
-    <div class="auth-links">
-      <a href="login.html" style="color: #00f;">Login</a> |
-      <a href="signup.html" style="color: #80c0ff;">Sign Up</a>
+    <h2>🎉 Welcome to Lucky King</h2>
+    <div class="game-grid">
+      <div class="game-box" onclick="location.href='color.html'">🎨 Color Prediction</div>
+      <div class="game-box" onclick="location.href='chicken.html'">🐔 Chicken Run</div>
+      <div class="game-box" onclick="location.href='dragon.html'">🐉 Dragon Tiger</div>
+      <div class="game-box" onclick="location.href='andar.html'">🂠 Andar Bahar</div>
+      <div class="game-box" onclick="location.href='dice.html'">🎲 Dice Game</div>
+      <div class="game-box" onclick="location.href='car.html'">🚗 Car Race</div>
+      <div class="game-box" onclick="location.href='wheel.html'">🎡 Wheel Spin</div>
+      <div class="game-box" onclick="location.href='coin.html'">🪙 Coin Flip</div>
     </div>
+  </div>
 
-    <div class="games">
-      <h3>Games</h3>
-      <div class="game-grid">
-        <a href="#"><span>🟧</span>Color Prediction</a>
-        <a href="#"><span>🐔</span>Chicken Run</a>
-        <a href="#"><span>🃏</span>Andar Bahar</a>
-        <a href="#"><span>🎡</span>Wheel Spin</a>
-        <a href="#"><span>🎲</span>Dice Game</a>
-        <a href="#"><span>🏎️</span>Car Race</a>
-        <a href="#"><span>🪙</span>Coin Flip</a>
-        <a href="#"><span>🐉</span>Dragon Tiger</a>
-      </div>
-    </div>
+  <div class="bottom-nav">
+    <a href="home.html">🏠 Home</a>
+    <a href="promotion.html">🎁 Promotion</a>
+    <a href="agent.html">👥 Agent</a>
+    <a href="wallet.html">💰 Wallet</a>
+    <a href="me.html">👤 Me</a>
   </div>
 </body>
 </html>
