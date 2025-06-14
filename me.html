@@ -1,61 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Me - Lucky King</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="header">
-    <h2>👤 My Account</h2>
-  </div>
-
-  <div class="content">
-    <div class="profile-box">
-      <p><strong>UID:</strong> 100023</p>
-      <p><strong>Phone:</strong> +91-98xxxxxx45</p>
-      <p><strong>Login Date:</strong> 2025-06-13</p>
-      <p><strong>Login Time:</strong> 11:48 AM</p>
-    </div>
-
-    <div class="section">
-      <h3>🔔 Notifications</h3>
-      <p>You have 3 unread messages.</p>
-    </div>
-
-    <div class="section">
-      <h3>⚙️ Settings</h3>
-      <p><a href="#">Change Password</a></p>
-      <p><a href="#">Language: English</a></p>
-    </div>
-
-    <div class="section">
-      <h3>🧾 Wallet Summary</h3>
-      <p>Deposit: ₹2,000</p>
-      <p>Withdrawal: ₹1,000</p>
-      <p>Balance: ₹1,000</p>
-    </div>
-
-    <div class="section">
-      <h3>🚪 Logout</h3>
-      <button onclick="logoutUser()">Logout</button>
-    </div>
-  </div>
-
-  <div class="bottom-nav">
-    <a href="home.html">🏠</a>
-    <a href="promotion.html">🎁</a>
-    <a href="agent.html">👥</a>
-    <a href="wallet.html">💰</a>
-    <a href="me.html" class="active">👤</a>
-  </div>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Me</title>
+  <link rel="stylesheet" href="style.css" />
   <script>
-    function logoutUser() {
-      // clear localStorage/session
-      alert("You have been logged out.");
+    if (!localStorage.getItem("isLoggedIn")) {
       window.location.href = "login.html";
     }
   </script>
+</head>
+<body>
+  <div class="container">
+    <h1>My Profile</h1>
+    <p>UID, settings, language, logout</p>
+    <nav class="bottom-nav">
+      <a href="index.html">Home</a>
+      <a href="promotion.html">Promotion</a>
+      <a href="agent.html">Agent</a>
+      <a href="wallet.html">Wallet</a>
+      <a href="me.html">Me</a>
+    </nav>
+  </div>
 </body>
 </html>
