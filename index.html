@@ -2,38 +2,46 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucky King - Home</title>
   <link rel="stylesheet" href="style.css" />
+
+  <!-- 🔐 Redirect to login if not logged in -->
+  <script>
+    const loggedIn = localStorage.getItem("isLoggedIn");
+    if (!loggedIn) {
+      window.location.href = "login.html";
+    }
+  </script>
 </head>
 <body>
-  <div class="header">
-    <h2>Lucky King</h2>
-    <div class="wallet-info">
-      Balance: ₹<span id="wallet-balance">0.00</span>
-    </div>
-  </div>
+  <div class="container">
+    <header>
+      <h1>Welcome to Lucky King</h1>
+    </header>
 
-  <div class="game-section">
-    <div class="game-card">
-      <img src="assets/color.png" alt="Color Game">
-      <p>Color Prediction</p>
-    </div>
-    <div class="game-card">
-      <img src="assets/chicken.png" alt="Chicken Run">
-      <p>Chicken Run</p>
-    </div>
-    <!-- Add more games if needed -->
-  </div>
+    <main>
+      <section class="games">
+        <h2>Available Games</h2>
+        <ul>
+          <li><a href="#">Color Prediction</a></li>
+          <li><a href="#">Chicken Run</a></li>
+          <li><a href="#">Dragon Tiger</a></li>
+          <li><a href="#">Wheel Spin</a></li>
+          <li><a href="#">Dice Game</a></li>
+          <li><a href="#">Coin Flip</a></li>
+          <li><a href="#">Car Race Prediction</a></li>
+        </ul>
+      </section>
+    </main>
 
-  <div class="bottom-nav">
-    <div class="nav-item active">Home</div>
-    <div class="nav-item">Promotion</div>
-    <div class="nav-item">Agent</div>
-    <div class="nav-item">Wallet</div>
-    <div class="nav-item">Me</div>
+    <nav class="bottom-nav">
+      <a href="index.html">Home</a>
+      <a href="promotion.html">Promotion</a>
+      <a href="agent.html">Agent</a>
+      <a href="wallet.html">Wallet</a>
+      <a href="me.html">Me</a>
+    </nav>
   </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
