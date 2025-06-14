@@ -1,53 +1,61 @@
 body {
   margin: 0;
-  font-family: sans-serif;
-  background: #111;
+  font-family: 'Arial', sans-serif;
+  background: #0b0b0b;
   color: #fff;
 }
+
 .header {
-  background: #222;
-  padding: 10px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.wallet-info {
+  padding: 20px;
+  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  text-align: center;
+  font-size: 24px;
   font-weight: bold;
 }
-.game-section {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 15px;
+
+.game-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  padding: 20px;
 }
+
 .game-card {
   background: #1e1e1e;
-  width: 45%;
-  margin: 10px 0;
-  padding: 10px;
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 20px;
   text-align: center;
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background 0.3s;
 }
-.game-card img {
-  width: 100%;
-  border-radius: 8px;
+
+.game-card:hover {
+  background: #2e2e2e;
 }
+
 .bottom-nav {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #111;
   display: flex;
-  background: #222;
+  justify-content: space-around;
+  align-items: center;
   border-top: 1px solid #333;
 }
+
 .nav-item {
-  flex: 1;
-  text-align: center;
-  padding: 10px 0;
+  color: #bbb;
+  text-decoration: none;
   font-size: 14px;
-  color: #ccc;
 }
-.nav-item.active {
-  color: #fff;
-  font-weight: bold;
+
+.nav-item.active,
+.nav-item:hover {
+  color: #ff4b2b;
 }
