@@ -1,22 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Signup - Lucky King</title>
-  <link rel="stylesheet" href="auth.css" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="auth-container">
-    <h1 class="title">Lucky King</h1>
-    <h2 class="subtitle">Create Account</h2>
-    <form action="#" method="post" class="auth-form">
-      <input type="text" placeholder="Email or Phone" required />
-      <input type="password" placeholder="Password" required />
-      <input type="password" placeholder="Confirm Password" required />
-      <button type="submit">Sign Up</button>
-      <p class="link">Already have an account? <a href="login.html">Login</a></p>
-    </form>
+  <div class="signup-container">
+    <h2>Signup</h2>
+    <input type="text" id="signup-username" placeholder="Email or Phone" />
+    <input type="password" id="signup-password" placeholder="Password" />
+    <input type="password" id="signup-confirm" placeholder="Confirm Password" />
+    <button onclick="signup()">Create Account</button>
+    <p>Already have an account? <a href="index.html">Login</a></p>
   </div>
+
+  <script>
+    function hash(text) {
+      return CryptoJS.SHA256(text).toString();
+    }
+
+    function signup() {
+      const username = document.getElementById("signup-username").value;
+      const password = document.getElementById("signup-password").value;
+      const confirm = document.getElementById("signup-confirm").value;
+
+      if (password !== confirm) {
+        alert("Passwords do not match.");
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem("users") || "[]");
+
+      if (users.find(u => u.username === username)) {
+        alert("User already exists.");
+        return;
+      }
+
+      users.push({ username, password: hash(password) });
+      localStorage.setItem("users", JSON.stringify(users));
+      alert("Signup successful!");
+      window.location.href = "index.html";
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </body>
 </html>
