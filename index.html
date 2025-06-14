@@ -5,36 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lucky King - Home</title>
   <link rel="stylesheet" href="style.css" />
-
-  <!-- 🔐 Redirect to login if not logged in -->
   <script>
-    const loggedIn = localStorage.getItem("isLoggedIn");
-    if (!loggedIn) {
+    if (!localStorage.getItem("isLoggedIn")) {
       window.location.href = "login.html";
     }
   </script>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>Welcome to Lucky King</h1>
-    </header>
-
-    <main>
-      <section class="games">
-        <h2>Available Games</h2>
-        <ul>
-          <li><a href="#">Color Prediction</a></li>
-          <li><a href="#">Chicken Run</a></li>
-          <li><a href="#">Dragon Tiger</a></li>
-          <li><a href="#">Wheel Spin</a></li>
-          <li><a href="#">Dice Game</a></li>
-          <li><a href="#">Coin Flip</a></li>
-          <li><a href="#">Car Race Prediction</a></li>
-        </ul>
-      </section>
-    </main>
-
+    <h1>Lucky King - Home</h1>
+    <ul>
+      <li>Color Prediction</li>
+      <li>Chicken Run</li>
+      <li>Dragon Tiger</li>
+      <li>Wheel Spin</li>
+      <li>Dice Game</li>
+      <li>Coin Flip</li>
+      <li>Car Race Prediction</li>
+    </ul>
     <nav class="bottom-nav">
       <a href="index.html">Home</a>
       <a href="promotion.html">Promotion</a>
