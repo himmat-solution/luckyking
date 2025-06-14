@@ -1,47 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Wallet - Lucky King</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wallet</title>
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    if (!localStorage.getItem("isLoggedIn")) {
+      window.location.href = "login.html";
+    }
+  </script>
 </head>
 <body>
-  <div class="header">
-    <h2>💰 Wallet</h2>
+  <div class="container">
+    <h1>Wallet</h1>
+    <p>Check balance and transactions</p>
+    <nav class="bottom-nav">
+      <a href="index.html">Home</a>
+      <a href="promotion.html">Promotion</a>
+      <a href="agent.html">Agent</a>
+      <a href="wallet.html">Wallet</a>
+      <a href="me.html">Me</a>
+    </nav>
   </div>
-
-  <div class="content">
-    <div class="wallet-balance">
-      <h3>Current Balance</h3>
-      <p>₹<span id="balance">0.00</span></p>
-    </div>
-
-    <div class="wallet-actions">
-      <button onclick="location.href='deposit.html'">💸 Deposit</button>
-      <button onclick="location.href='withdraw.html'">🏦 Withdraw</button>
-    </div>
-
-    <div class="wallet-history">
-      <h3>Transaction History</h3>
-      <ul id="transactionList">
-        <li>Deposit ₹500 - 2025-06-10</li>
-        <li>Withdraw ₹200 - 2025-06-11</li>
-        <li>Game Win ₹120 - 2025-06-12</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="bottom-nav">
-    <a href="home.html">🏠</a>
-    <a href="promotion.html">🎁</a>
-    <a href="agent.html">👥</a>
-    <a href="wallet.html" class="active">💰</a>
-    <a href="me.html">👤</a>
-  </div>
-
-  <script>
-    // Replace this with actual logic from backend/session
-    document.getElementById("balance").textContent = "1,250.00";
-  </script>
 </body>
 </html>
