@@ -3,21 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Signup - Lucky King</title>
+  <title>Create Account - Lucky King</title>
   <link rel="stylesheet" href="auth-style.css" />
 </head>
-<body>
-  <div class="auth-container">
-    <form id="signup-form" class="auth-box">
-      <h2>Create Account</h2>
-      <input type="text" id="signup-username" placeholder="Phone or Email" required />
+<body class="auth-body">
+  <div class="auth-box">
+    <h2>Create Account</h2>
+    <form onsubmit="signupUser(event)">
+      <input type="text" id="signup-username" placeholder="Email or Phone" required />
       <input type="password" id="signup-password" placeholder="Password" required />
       <input type="password" id="signup-confirm" placeholder="Confirm Password" required />
+      <input type="text" id="referral-code" placeholder="Referral Code (Optional)" />
       <button type="submit">Signup</button>
-      <p>Already have an account? <a href="login.html">Login</a></p>
     </form>
+    <p>
+      Already have an account? <a href="login.html">Login</a>
+    </p>
   </div>
 
-  <script src="auth.js"></script>
+  <script>
+    // Auto-fill referral code from URL (e.g., ?ref=100001)
+    const urlParams = new URLSearchParams(window.location.search);
+    const refCode = urlParams.get('ref');
+    if (refCode) {
+      document.getElementById('referral-code').value = refCode;
+    }
+
+    function signupUser(event) {
+      event.preventDefault();
+      const username = document.getElementById('signup-username').value.trim();
+      const password = document.getElementById('signup-password').value;
+      const confirm = document.getElementById('signup-confirm').value;
+      const referral = document.getElementById('referral-code').value.trim();
+
+      if (password !== confirm) {
+        alert("Passwords do not match!");
+        return;
+      }
+
+      // Save user data (demo only – replace with real API call)
+      const userData = {
+        username,
+        password,
+        referralCode: referral
+      };
+
+      console.log("Signup data:", userData);
+      // Redirect to login or dashboard after signup
+      alert("Account created! Redirecting to login...");
+      window.location.href = "login.html";
+    }
+  </script>
 </body>
 </html>
