@@ -68,15 +68,11 @@
       const phoneOrEmail = document.getElementById("loginPhoneEmail").value.trim();
       const password = document.getElementById("loginPassword").value;
 
-      // Get stored user from localStorage
       const storedUser = JSON.parse(localStorage.getItem(phoneOrEmail));
 
       if (storedUser && storedUser.password === password) {
-        // Save login session
         localStorage.setItem("loggedInUser", phoneOrEmail);
-
-        // Redirect to home/dashboard
-        window.location.href = "home.html";  // change if needed
+        window.location.href = "home.html";  // Make sure home.html exists
       } else {
         alert("Invalid phone/email or password");
       }
