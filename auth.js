@@ -1,21 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
+  // LOGIN
   const loginForm = document.getElementById("loginForm");
-  const signupForm = document.getElementById("signupForm");
-
-  // Handle login
   if (loginForm) {
-    loginForm.addEventListener("submit", (e) => {
+    loginForm.addEventListener("submit", function (e) {
       e.preventDefault();
       const username = document.getElementById("username").value.trim();
-      const password = document.getElementById("password").value.trim();
+      const password = document.getElementById("password").value;
 
-      const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
-      const existingUser = storedUsers.find(
-        (user) => (user.phone === username || user.email === username) && user.password === password
+      const users = JSON.parse(localStorage.getItem("users")) || [];
+      const foundUser = users.find(
+        (user) =>
+          (user.email === username || user.phone === username) &&
+          user.password === password
       );
 
-      if (existingUser) {
-        localStorage.setItem("loggedInUser", JSON.stringify(existingUser));
+      if (foundUser) {
+        localStorage.setItem("loggedInUser", JSON.stringify(foundUser));
         window.location.href = "home.html";
       } else {
         alert("Invalid credentials");
@@ -23,36 +23,40 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Handle signup
+  // SIGNUP
+  const signupForm = document.getElementById("signupForm");
   if (signupForm) {
-    signupForm.addEventListener("submit", (e) => {
+    signupForm.addEventListener("submit", function (e) {
       e.preventDefault();
-      const phoneOrEmail = document.getElementById("phoneOrEmail").value.trim();
-      const password = document.getElementById("signupPassword").value.trim();
-      const confirmPassword = document.getElementById("confirmPassword").value.trim();
+      const phone = document.getElementById("signupPhone").value.trim();
+      const password = document.getElementById("signupPassword").value;
+      const confirm = document.getElementById("signupConfirm").value;
 
-      if (password !== confirmPassword) {
-        alert("Passwords do not match!");
+      if (password !== confirm) {
+        alert("Passwords do not match");
         return;
       }
 
       const users = JSON.parse(localStorage.getItem("users")) || [];
-      const isExisting = users.some((user) => user.phone === phoneOrEmail || user.email === phoneOrEmail);
-      if (isExisting) {
+      const alreadyExists = users.find(
+        (u) => u.phone === phone || u.email === phone
+      );
+
+      if (alreadyExists) {
         alert("User already exists");
         return;
       }
 
       const newUser = {
-        uid: "1000" + (users.length + 1),
-        phone: /^\d+$/.test(phoneOrEmail) ? phoneOrEmail : "",
-        email: /^\S+@\S+\.\S+$/.test(phoneOrEmail) ? phoneOrEmail : "",
-        password,
+        uid: Date.now().toString().slice(-6),
+        phone: phone.includes("@") ? null : phone,
+        email: phone.includes("@") ? phone : null,
+        password: password,
       };
 
       users.push(newUser);
       localStorage.setItem("users", JSON.stringify(users));
-      alert("Signup successful. Please login.");
+      alert("Account created. Please login.");
       window.location.href = "login.html";
     });
   }
