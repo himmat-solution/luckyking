@@ -1,23 +1,100 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Lucky King - Home</title>
+  <title>Lucky King</title>
   <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+    .section {
+      display: none;
+      padding: 20px;
+    }
+    .section.active {
+      display: block;
+    }
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: #222;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+    .bottom-nav a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .bottom-nav a.active {
+      color: #ffcc00;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <div class="content">
-    <h1>Welcome to Lucky King</h1>
-    <p>This is the home page.</p>
+
+  <!-- Sections -->
+  <div id="home" class="section active">
+    <h2>🏠 Home</h2>
+    <p>All games will show here.</p>
   </div>
+
+  <div id="promotion" class="section">
+    <h2>🎁 Promotion</h2>
+    <p>Your referral code and invite link info.</p>
+  </div>
+
+  <div id="agent" class="section">
+    <h2>🧑‍💼 Agent</h2>
+    <p>Your team structure will appear here.</p>
+  </div>
+
+  <div id="wallet" class="section">
+    <h2>💰 Wallet</h2>
+    <p>Balance, deposits, withdrawals, and history.</p>
+  </div>
+
+  <div id="me" class="section">
+    <h2>👤 Me</h2>
+    <p>Your profile, UID, and settings.</p>
+  </div>
+
+  <!-- Bottom Navigation -->
   <footer class="bottom-nav">
-    <a href="index.html">Home</a>
-    <a href="promotion.html">Promotion</a>
-    <a href="agent.html">Agent</a>
-    <a href="wallet.html">Wallet</a>
-    <a href="me.html">Me</a>
+    <a href="#" class="tab active" data-target="home">Home</a>
+    <a href="#" class="tab" data-target="promotion">Promotion</a>
+    <a href="#" class="tab" data-target="agent">Agent</a>
+    <a href="#" class="tab" data-target="wallet">Wallet</a>
+    <a href="#" class="tab" data-target="me">Me</a>
   </footer>
+
+  <script>
+    const tabs = document.querySelectorAll(".tab");
+    const sections = document.querySelectorAll(".section");
+
+    tabs.forEach(tab => {
+      tab.addEventListener("click", e => {
+        e.preventDefault();
+
+        // Remove active from all
+        tabs.forEach(t => t.classList.remove("active"));
+        sections.forEach(s => s.classList.remove("active"));
+
+        // Add active to selected
+        tab.classList.add("active");
+        const target = tab.getAttribute("data-target");
+        document.getElementById(target).classList.add("active");
+      });
+    });
+  </script>
+
 </body>
 </html>
