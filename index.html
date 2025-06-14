@@ -3,16 +3,40 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome to Lucky King</title>
+  <title>Login - Lucky King</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="container">
-    <div class="box">
-      <h1>Welcome to Lucky King</h1>
-      <a href="login.html" class="btn">Login</a>
-      <a href="signup.html" class="btn">Sign Up</a>
-    </div>
+  <div class="login-container">
+    <h2>Login</h2>
+    <input type="text" id="login-username" placeholder="Email or Phone" />
+    <input type="password" id="login-password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <a href="signup.html">Signup</a></p>
+    <p><a href="#">Forgot Password?</a></p>
   </div>
+
+  <script>
+    function hash(text) {
+      return CryptoJS.SHA256(text).toString();
+    }
+
+    function login() {
+      const username = document.getElementById("login-username").value;
+      const password = document.getElementById("login-password").value;
+      const users = JSON.parse(localStorage.getItem("users") || "[]");
+
+      const hashedPassword = hash(password);
+      const user = users.find(u => u.username === username && u.password === hashedPassword);
+
+      if (user) {
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        window.location.href = "home.html";
+      } else {
+        alert("Invalid credentials");
+      }
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
 </body>
 </html>
