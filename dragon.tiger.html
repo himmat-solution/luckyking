@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dragon Tiger - Lucky King</title>
+  <link rel="stylesheet" href="dragon-tiger.css" />
+</head>
+<body>
+  <div class="game-container">
+    <h2>Dragon Tiger</h2>
+    <div class="timer">Next Round In: <span id="countdown">10</span>s</div>
+
+    <div class="cards">
+      <div class="card dragon">🐉</div>
+      <div class="card tiger">🐯</div>
+    </div>
+
+    <div class="buttons">
+      <button onclick="placeBet('dragon')">Bet on Dragon</button>
+      <button onclick="placeBet('tiger')">Bet on Tiger</button>
+      <button onclick="placeBet('tie')">Bet on Tie</button>
+    </div>
+
+    <div class="status">
+      <p>Selected: <span id="selected">None</span></p>
+      <p>Result: <span id="result">--</span></p>
+    </div>
+  </div>
+
+  <script src="dragon-tiger.js"></script>
+</body>
+</html>
