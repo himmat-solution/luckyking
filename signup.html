@@ -1,105 +1,25 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Signup - Lucky King</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(to bottom right, #ff512f, #f09819);
-    }
-
-    .signup-box {
-      width: 300px;
-      margin: 100px auto;
-      padding: 30px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0px 0px 10px rgba(0,0,0,0.3);
-      text-align: center;
-    }
-
-    .signup-box h2 {
-      margin-bottom: 20px;
-    }
-
-    .signup-box input {
-      width: 90%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .signup-box button {
-      width: 95%;
-      padding: 10px;
-      background-color: orange;
-      color: white;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
-
-    .signup-box a {
-      display: block;
-      margin-top: 15px;
-      font-size: 14px;
-      color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="auth-style.css" />
 </head>
 <body>
-  <div class="signup-box">
-    <h2>Create Account</h2>
-    <form id="signupForm">
-      <input type="text" id="emailOrPhone" placeholder="Email or Phone" required />
-      <input type="password" id="password" placeholder="Password" required />
-      <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
-      <input type="text" id="referralCode" placeholder="Referral Code (Optional)" />
-      <button type="submit">Signup</button>
-    </form>
-    <a href="login.html">Already have an account? Login</a>
+  <div class="auth-container">
+    <div class="auth-box">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input type="text" id="signup-identifier" placeholder="Email or Phone" required />
+        <input type="password" id="signup-password" placeholder="Password" required />
+        <input type="password" id="signup-confirm" placeholder="Confirm Password" required />
+        <input type="text" id="signup-referral" placeholder="Referral Code (optional)" />
+        <button type="submit">Sign Up</button>
+        <p class="link">Already have an account? <a href="login.html">Login</a></p>
+      </form>
+    </div>
   </div>
-
-  <script>
-    // Autofill referral code from URL
-    const urlParams = new URLSearchParams(window.location.search);
-    const refCode = urlParams.get("ref");
-    if (refCode) {
-      document.getElementById("referralCode").value = refCode;
-    }
-
-    document.getElementById("signupForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const emailOrPhone = document.getElementById("emailOrPhone").value.trim();
-      const password = document.getElementById("password").value;
-      const confirmPassword = document.getElementById("confirmPassword").value;
-      const referralCode = document.getElementById("referralCode").value.trim();
-
-      if (password !== confirmPassword) {
-        alert("Passwords do not match!");
-        return;
-      }
-
-      // Check if already registered
-      if (localStorage.getItem(emailOrPhone)) {
-        alert("User already exists. Please login.");
-        return;
-      }
-
-      const userData = {
-        password: password,
-        referral: referralCode
-      };
-
-      localStorage.setItem(emailOrPhone, JSON.stringify(userData));
-
-      alert("Account created successfully!");
-      window.location.href = "login.html";
-    });
-  </script>
+  <script src="auth.js"></script>
 </body>
 </html>
