@@ -1,0 +1,152 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to bottom right, #ff3c00, #ffc107);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #000;
+}
+
+/* Auth Card */
+.auth-card {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 95%;
+  max-width: 400px;
+  margin-top: 50px;
+}
+
+/* Auth Card Headings */
+.auth-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Inputs */
+.auth-card input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+/* Buttons */
+.auth-card button {
+  width: 100%;
+  padding: 12px;
+  background-color: #f5a623;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.auth-card button:hover {
+  background-color: #d48806;
+}
+
+/* Switch Link */
+.auth-card p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.auth-card a {
+  color: #ff3c00;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.auth-card a:hover {
+  text-decoration: underline;
+}
+
+/* Home Header */
+header {
+  width: 100%;
+  background: #fff;
+  padding: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Game Grid */
+.games-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  padding: 20px;
+  width: 100%;
+  max-width: 500px;
+}
+
+/* Game Cards */
+.game-card {
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.game-card:hover {
+  transform: translateY(-3px);
+}
+
+.game-card img {
+  width: 100%;
+  height: 100px;
+  object-fit: cover;
+}
+
+.game-card p {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Bottom Menu */
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  justify-content: space-around;
+  padding: 10px 0;
+  font-size: 14px;
+}
+
+.bottom-nav a {
+  text-align: center;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.bottom-nav a:hover {
+  color: #ff3c00;
+}
