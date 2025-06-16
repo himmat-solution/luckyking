@@ -1,23 +1,24 @@
-// auth.js - handles login logic
+// Wait until DOM is loaded
+document.addEventListener("DOMContentLoaded", function () {
+  const loginForm = document.getElementById("login-form");
 
-document.getElementById('login-form').addEventListener('submit', function (e) {
-  e.preventDefault();
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (e) {
+      e.preventDefault();
 
-  const identifier = document.getElementById('login-identifier').value.trim();
-  const password = document.getElementById('login-password').value;
+      const identifier = document.getElementById("login-identifier").value.trim();
+      const password = document.getElementById("login-password").value.trim();
 
-  // Simple validation — you can replace with real backend call
-  if (identifier && password) {
-    const user = {
-      id: Date.now(),
-      identifier: identifier,
-    };
+      // Basic dummy validation (you can replace this with real logic later)
+      if (identifier !== "" && password !== "") {
+        // Save user session to localStorage
+        localStorage.setItem("user", identifier);
 
-    localStorage.setItem("user", JSON.stringify(user));
-
-    // Redirect to homepage
-    window.location.href = "index.html";
-  } else {
-    alert("Please enter both fields.");
+        // Redirect to homepage
+        window.location.href = "index.html";
+      } else {
+        alert("Please enter both Email/Phone and Password");
+      }
+    });
   }
 });
