@@ -43,15 +43,12 @@
   </div>
 
   <script>
-    // Redirect to login if not logged in
-    const isLoggedIn = localStorage.getItem("isLoggedIn");
-if (!isLoggedIn) {
-  window.location.href = "login.html";
-}
+  // Redirect to login if not logged in
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  if (!isLoggedIn) {
+    window.location.href = "login.html";
+  }
+</script>
 
-    if (!user) {
-      window.location.href = "login.html";
-    }
-  </script>
 </body>
 </html>
