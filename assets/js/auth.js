@@ -1,24 +1,45 @@
-// Wait until DOM is loaded
-document.addEventListener("DOMContentLoaded", function () {
-  const loginForm = document.getElementById("login-form");
+document.addEventListener('DOMContentLoaded', function () {
+  const loginForm = document.getElementById('loginForm');
+  const signupForm = document.getElementById('signupForm');
 
   if (loginForm) {
-    loginForm.addEventListener("submit", function (e) {
+    loginForm.addEventListener('submit', function (e) {
       e.preventDefault();
+      const emailPhone = document.getElementById('emailPhone').value;
+      const password = document.getElementById('password').value;
 
-      const identifier = document.getElementById("login-identifier").value.trim();
-      const password = document.getElementById("login-password").value.trim();
-
-      // Basic dummy validation (you can replace this with real logic later)
-      if (identifier !== "" && password !== "") {
-        // Save user session to localStorage
-        localStorage.setItem("user", identifier);
-
-        // Redirect to homepage
-        window.location.href = "index.html";
+      // Dummy login logic
+      if (emailPhone && password) {
+        localStorage.setItem('loggedIn', 'true');
+        window.location.href = 'index.html';
       } else {
-        alert("Please enter both Email/Phone and Password");
+        alert('Invalid login');
       }
     });
+  }
+
+  if (signupForm) {
+    signupForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const emailPhone = document.getElementById('emailPhone').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const referralCode = document.getElementById('referralCode').value;
+
+      if (password !== confirmPassword) {
+        alert('Passwords do not match');
+        return;
+      }
+
+      // Save dummy user data
+      localStorage.setItem('loggedIn', 'true');
+      localStorage.setItem('referralCode', referralCode);
+      window.location.href = 'index.html';
+    });
+  }
+
+  // Redirect to login if not logged in
+  if (window.location.pathname.includes('index.html') && localStorage.getItem('loggedIn') !== 'true') {
+    window.location.href = 'login.html';
   }
 });
