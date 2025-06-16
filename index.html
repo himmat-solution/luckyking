@@ -44,7 +44,11 @@
 
   <script>
     // Redirect to login if not logged in
-    const user = localStorage.getItem("user");
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+if (!isLoggedIn) {
+  window.location.href = "login.html";
+}
+
     if (!user) {
       window.location.href = "login.html";
     }
